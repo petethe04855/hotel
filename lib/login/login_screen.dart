@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel/menu/menu_screen.dart';
 import 'package:hotel/widget/container_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -29,6 +30,19 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20,
             ),
             password(),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => MenuScreen(),
+                    ),
+                    (route) => false,
+                  );
+                },
+                child: Text("Login"))
           ],
         ),
       ),
