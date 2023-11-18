@@ -54,18 +54,6 @@ class _MenuScreenState extends State<MenuScreen> {
                       );
                     },
                   );
-                  // return Container(
-                  //   margin: const EdgeInsets.all(10),
-                  //   decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.all(
-                  //       Radius.circular(25),
-                  //     ),
-                  //     image: DecorationImage(
-                  //       image: NetworkImage(images[pagePosition]),
-                  //       fit: BoxFit.cover, // ปรับตามความต้องการ
-                  //     ),
-                  //   ),
-                  // );
                 },
               ),
             ),

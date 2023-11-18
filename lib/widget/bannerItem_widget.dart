@@ -18,7 +18,7 @@ class BannerItemWidget extends StatelessWidget {
         ),
         image: DecorationImage(
           image: NetworkImage(imageView.ImageUrl),
-          fit: BoxFit.cover, // ปรับตามความต้องการ
+          fit: BoxFit.cover,
         ),
       ),
     );
