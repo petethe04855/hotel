@@ -34,15 +34,16 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20,
             ),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(
-                      builder: (context) => MenuScreen(),
-                    ),
-                    (route) => false,
-                  );
-                },
-                child: Text("Login"))
+              onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (context) => MenuScreen(),
+                  ),
+                  (route) => false,
+                );
+              },
+              child: Text("Login"),
+            ),
           ],
         ),
       ),
