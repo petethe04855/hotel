@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel/models/image_page_view.dart';
+import 'package:hotel/reservation/reservation_screen.dart';
 import 'package:hotel/widget/bannerItem_widget.dart';
 import 'package:hotel/widget/indicator_widget.dart';
 
@@ -14,6 +16,19 @@ class _MenuScreenState extends State<MenuScreen> {
   late PageController _pageController;
 
   int activePage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController =
+        PageController(); // กำหนดค่าให้ _pageController ใน initState
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,6 +140,14 @@ class _MenuScreenState extends State<MenuScreen> {
                         ),
                         width: 170,
                         height: 170,
+                        child: const Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'จองตั่วเครื่องบิน',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                     ),
                     GestureDetector(
@@ -137,6 +160,14 @@ class _MenuScreenState extends State<MenuScreen> {
                         ),
                         width: 170,
                         height: 170,
+                        child: const Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'สถานะ',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -151,6 +182,10 @@ class _MenuScreenState extends State<MenuScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
+                      onTap: () => Navigator.push(context,
+                          CupertinoPageRoute(builder: (context) {
+                        return ReservationScreen();
+                      })),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.cyan,
@@ -160,6 +195,14 @@ class _MenuScreenState extends State<MenuScreen> {
                         ),
                         width: 170,
                         height: 170,
+                        child: const Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'จองที่พัก',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                     ),
                     GestureDetector(
@@ -172,6 +215,14 @@ class _MenuScreenState extends State<MenuScreen> {
                         ),
                         width: 170,
                         height: 170,
+                        child: const Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '-----',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -192,6 +243,14 @@ class _MenuScreenState extends State<MenuScreen> {
                     ),
                     width: double.infinity,
                     height: 100,
+                    child: const Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'ติดต่อ',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                 ),
               ),
